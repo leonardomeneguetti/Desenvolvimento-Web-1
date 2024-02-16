@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercicio Tabela</title>
+    </head>
+    <body>
+        <h1>Utilização dos atributos colspan e rowspan - Exercício </h1>
+        <table border="4" cellpadding="10" bordercolor="black">
+            <caption>Relação de notas da disciplina de DW1S5</caption>
+            <thead>
+                <tr>
+                    <th colspan="6">Tabela de notas</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Alunos*</th>
+                    <th rowspan="2">N1</th>
+                    <th rowspan="2">N2</th>
+                    <th rowspan="2">N3</th> 
+                    <th rowspan="2">N4</th>
+                </tr>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>João</td>
+                    <td>7,5</td>
+                    <td>8,0</td>
+                    <td>6,0</td>
+                    <td>9,5</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Maria</td>
+                    <td>7,0</td>
+                    <td>6,5</td>
+                    <td>4,5</td>
+                    <td>6,0</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td colspan="6">* Valores de dois alunos apenas</td>
+            </tfoot>
+        </table>
+    </body>
+</html>

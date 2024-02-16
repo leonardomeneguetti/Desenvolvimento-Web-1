@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo 1</title>
+    </head>
+    <body>
+        <h1>Exemplo 1</h1>
+        <h2>Tabela</h2>
+        <!-- border coloca uma borda e especifica a grossura, cellpadding especifica o tamanho da célula e bordercolor especifica a cor da borda -->
+        <table border="3" cellpadding="10" bordercolor="green">
+            <caption>Tabela 1</caption>
+            <tr>
+                <!-- th = table header -->
+                <th>Nome</th>
+                <th>Salário</th>
+            </tr>
+            <tr>
+                <!-- td = table data -->
+                <td>João Roberto</td>
+                <td>R$ 1500,00</td>
+            </tr>
+            <tr>
+                <td>Maria Luiza</td>
+                <td>R$ 2100,00</td>
+            </tr>
+            <tr>
+                <td>Juliana Lopes</td>
+                <td>R$ 1300,00</td>
+            </tr>
+        </table>
+
+        <br/>
+        <hr/>
+        
+        <h2>Tabela desnivelada</h2>
+        <table border="2" cellpadding="15" bordercolor="blue">
+            <tr>
+                <!-- rowspan mescla linhas e colspan mescla coluna -->
+                <th rowspan="2">Produto</th>
+                <th colspan="2">Preço</th>
+                <th rowspan="2">Cor</th>
+            </tr>
+            <tr>
+                <th>À vista</th>
+                <th>Cartão</th>
+            </tr>
+            <tr>
+                <td>Camisa</td>
+                <td>R$ 96,50</td>
+                <td>R$ 90,00</td>
+                <td>Branca</td>
+            </tr>
+            <tr>
+                <td>Sapato</td>
+                <td>R$ 65,00</td>
+                <td>R$ 62,00</td>
+                <td>Preto</td>
+            </tr>
+        </table>
+
+        <br/>
+        <hr/>
+
+        <h2>Tabela com rodapé</h2>
+        <table border="2" cellpadding="10" bordercolor="red">
+            <!--thead, tbody e tfoot são utilizados por boa prática, dividindo a tabela em seções-->
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Salário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Roberto</td>
+                    <td>R$ 1500,00</td>
+                </tr>
+                <tr>
+                    <td>Maria Luiza</td>
+                    <td>R$ 2100,00</td>
+                </tr>
+                <tr>
+                    <td>Juliana Lopes</td>
+                    <td>R$ 1300,00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td colspan="2">* Valores sem considera bônus</td>
+            </tfoot>
+        </table>
+    </body>
+</html>
