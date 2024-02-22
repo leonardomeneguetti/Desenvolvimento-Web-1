@@ -1,0 +1,22 @@
+.lvl1 {
+    list-style-type: decimal;
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+}
+
+.lvl2 {
+    list-style-type: upper-alpha;
+    color: rgba(4, 92, 104, 0.897);
+    font-size: 24px;
+}
+
+.lvl3 {
+    list-style-type: lower-roman;
+    color: rgb(1, 182, 1);
+    font-size: 22px;
+}
+
+span {
+    color: rgb(218, 142, 1);
+}
