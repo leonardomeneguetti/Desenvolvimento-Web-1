@@ -6,32 +6,43 @@
 </head>
 <body>
     <h1>Formulário</h1>
+    <!---->
     <form action="margin.html" method="post" enctype="multipart/form-data">
+        <!---->
         <label for="nome">Nome: </label>
-        <input type="text" name="nome" required="required" id="nome" placeholder="Seu nome..."/>
+        <!---->
+        <input type="text" name="nome" required="required" placeholder="Seu nome..." id="nome"/>
         <br>
         <label for="idade">Idade: </label>
+        <!---->
         <input type="number" name="idade" id="idade" min="18" max="90" step="1">
         <br>
         <label for="nasc">Nascimento: </label>
+        <!---->
         <input type="date" name="nasc" id="nasc" min="1900-01-01">
         <br>
         <label for="senha">Senha: </label>
+        <!---->
         <input type="password" name="senha" id="senha" maxlength="10">
         <br>
         <label for="obs">Observações: </label>
+        <!---->
         <textarea name="obs" id="obs">
             Texto default que será exibido na área
         </textarea>
         <br>
         <label for="imagem">Imagem: </label>
+        <!---->
         <input type="file" name="imagem" accept="image/*" id="imagem">
         <br>
         <label for="imagem2">Varias imagens: </label>
+        <!---->
         <input type="file" name="imagem" accept="image/*" id="imagem2" multiple="multiple">
         <br>
+        <!---->
         <label>Sexo: 
             <label>
+                <!---->
                 <input type="radio" name="sexo" value="m" checked="checked"/>Masculino
             </label>
             <label>
@@ -39,6 +50,7 @@
             </label>
         </label>
         <br>
+        <!---->
         <label>Esportes que gosta: 
             <label>
                 <input type="checkbox" name="esporte" value="fut"/>Futebol
@@ -52,7 +64,9 @@
         </label>
         <br>
         <label for="uf">Unidade federativa: </label>
+        <!---->
         <select name="uf" id="uf">
+            <!---->
             <optgroup label="Sudeste">
                 <option value="sp" selected="selected">SP</option>
             </optgroup>
@@ -64,6 +78,7 @@
             </optgroup>
         </select>
         <br>
+        <!---->
         <input type="text" name="idioma" list="idiomas"/>
         <datalist id="idiomas">
             <option>Inglês</option>
@@ -72,33 +87,44 @@
         </datalist>
         <br>
         <label for="time">Hora: </label>
+        <!---->
         <input type="time" name="hora" id="time">
         <br>
         <label for="datetime">Data e hora: </label>
+        <!---->
         <input type="datetime-local" name="datahora" id="datetime">
         <br>
         <label for="mes">Mês: </label>
+        <!---->
         <input type="month" name="mes" id="mes">
         <br>
         <label for="sem">Semana: </label>
+        <!---->
         <input type="week" name="sem" id="sem">
         <br>
         <label for="int">Intervalo: </label>
+        <!---->
         <input type="range" name="ran" id="int">
         <br>
         <label for="mail">E-mail: </label>
+        <!---->
         <input type="email" name="mail" id="mail">
         <br>
         <label for="url">URL: </label>
+        <!---->
         <input type="url" name="url" id="url">
         <br>
         <label for="cor">Cor: </label>
+        <!---->
         <input type="color" name="cor" id="cor">
         <br>
         <label for="pesq">Busca: </label>
+        <!---->
         <input type="search" name="search" id="pesq">
         <br>
+        <!---->
         <input type="submit" name="enviar" value="OK" id="enviar"/>
+        <!---->
         <input type="reset" name="resetar" value="Reset" id="resetar">
         </form>
 </body>
