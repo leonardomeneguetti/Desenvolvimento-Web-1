@@ -1,11 +1,17 @@
 section {
-    margin: 300px 550px;
-    border: 5px solid black;
+    /*margin pode ser usado diferenciando o tamanho para cada direção(top, right, bottom, left), com apenas um valora(?px), que será igualado para todos os lado, 
+    com dois(top-margin left-margin) ou com 4, que identificará cada um deles em sentido horáario*/
+    margin: 300px 607px;
+    /*border: grossura tipo cor*/
+    border: 2px solid black;
+    /*mesmo jeito que o margin, mas elementos internos a essa tag*/
     padding: 40px 80px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 table {
     border-color: black;
+    /*faz as linhas duplas da borda html se juntarem*/
     border-collapse: collapse;
     text-align: center;
 }

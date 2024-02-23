@@ -6,43 +6,50 @@
 </head>
 <body>
     <h1>Formulário</h1>
-    <!---->
+    <!--"<form></form>" é a tag que permite configurar um formulario, para funcinarem, todos <input/> devem ser colocados dentro dela-->
+    <!--action="" atribui o destino do formulario, para onde as informações irão, pode ser uma url ou um email-->
+    <!--method="" atribui o método de transmição desses dados, pode ser "get"(mais simples, não é seguro) ou "post"(mais robust, seguro)-->
+    <!--enctype="" especifica a estratégia de codificação dos dados("application/x-www-form-urlencoded", "multipart/form-data", "text-plain")-->
     <form action="margin.html" method="post" enctype="multipart/form-data">
-        <!---->
+        <!--labels são rótulos, usados do mesmo jeito que o jLabel no swing, for="" indica a qual elemento será ancorado, o que está entre as tags aparece na pagina-->
         <label for="nome">Nome: </label>
-        <!---->
+        <!--input são elementos de controle, é necessário pelo menos 2 atributos, type, que identifica o tipo e name, que é utilizado para que o valor de cada campo preenchido
+            seja recuperado após a submissão.-->
+        <!--type="text" cria uma caixa de texto que recebe quaisquer sequencias de caracteres-->
+        <!--required="required" obriga o campo a ser preenchido-->
+        <!--placeholder serve para indicar ao usuario como o campo deve ser preenchido-->
+        <!--id="" é o nome que será identificado pelo label-->
         <input type="text" name="nome" required="required" placeholder="Seu nome..." id="nome"/>
         <br>
         <label for="idade">Idade: </label>
-        <!---->
+        <!--number faz a validação de valores numericos-->
+        <!--min="" restringe o valor minimo, max="" o máximo e step="" a escala de intervalos-->
         <input type="number" name="idade" id="idade" min="18" max="90" step="1">
         <br>
         <label for="nasc">Nascimento: </label>
-        <!---->
+        <!--date faz as validações de datas(aaaa-mm-dd)-->
         <input type="date" name="nasc" id="nasc" min="1900-01-01">
         <br>
         <label for="senha">Senha: </label>
-        <!---->
-        <input type="password" name="senha" id="senha" maxlength="10">
+        <!--password funciona como o text, mas mascara o conteúdo-->
+        <!--maxlength="" coloca um limite de caracteres, minlegth="" coloca um mínimo-->
+        <input type="password" name="senha" id="senha" maxlength="18" minlength="4">
         <br>
         <label for="obs">Observações: </label>
-        <!---->
-        <textarea name="obs" id="obs">
-            Texto default que será exibido na área
-        </textarea>
+        <!--textarea cria uma área de texto com várias linhas-->
+        <textarea name="obs" id="obs"></textarea>
         <br>
         <label for="imagem">Imagem: </label>
-        <!---->
-        <input type="file" name="imagem" accept="image/*" id="imagem">
+        <!--file é usado para enviar arquivos ao formulario-->
+        <!--accept="" filtra o que o campo aceita("image/*"; "video/*"; "audio/*")-->
+        <!--multiple="multiple" permite o envio de vários arquivos-->
+        <input type="file" name="imagem" accept="image/*" multiple="multiple" id="imagem">
         <br>
-        <label for="imagem2">Varias imagens: </label>
-        <!---->
-        <input type="file" name="imagem" accept="image/*" id="imagem2" multiple="multiple">
-        <br>
-        <!---->
+        <!--estrutura básica para um tipo radio, que permite a escolha de apenas uma entre um numero de opções conhecidas-->
         <label>Sexo: 
             <label>
-                <!---->
+                <!--value="" é obrigatorio estar preenchido, checked="checked" faz esse elemento vir selecionado por padrão-->
+                <!--name="" deve ser o mesmo para todas as opções do grupo-->
                 <input type="radio" name="sexo" value="m" checked="checked"/>Masculino
             </label>
             <label>
@@ -50,9 +57,11 @@
             </label>
         </label>
         <br>
-        <!---->
+        <!--checkbox é parecido com radio, mas permite selecionar várias opções-->
         <label>Esportes que gosta: 
             <label>
+                <!--value="" é obrigatorio estar preenchido-->
+                <!--name="" deve ser o mesmo para todas as opções do grupo-->
                 <input type="checkbox" name="esporte" value="fut"/>Futebol
             </label>
             <label>
@@ -64,10 +73,14 @@
         </label>
         <br>
         <label for="uf">Unidade federativa: </label>
-        <!---->
+        <!--select cria listas de seleção, uma versão mais simples de implementar que o checkbox, e aparece como um botão expansivo-->
         <select name="uf" id="uf">
-            <!---->
+            <!--optiongroup agrupa opções na lista-->
             <optgroup label="Sudeste">
+                <!--option cria opções na lista, com o valor entre elas aparecendo na pagina-->
+                <!--selected="selected" especifica uma opção selecionada por padrão-->
+                <!--multiple="multiple" atambém pode ser usado aqui-->
+                <!--value="" é obrigatorio estar preenchido-->
                 <option value="sp" selected="selected">SP</option>
             </optgroup>
             <optgroup label="Sul">
@@ -78,8 +91,9 @@
             </optgroup>
         </select>
         <br>
-        <!---->
+        <!--list="" permite criar uma lista, mas ao contrario das outras, não se sabe todas as opções-->
         <input type="text" name="idioma" list="idiomas"/>
+        <!--datalist cria uma lista de provaveis preenchimentos para um elemento, linkado pelo list="" do input-->
         <datalist id="idiomas">
             <option>Inglês</option>
             <option>Francês</option>
@@ -87,45 +101,45 @@
         </datalist>
         <br>
         <label for="time">Hora: </label>
-        <!---->
+        <!--time valida a entrada de um horário(hh:mm:ss)-->
         <input type="time" name="hora" id="time">
         <br>
         <label for="datetime">Data e hora: </label>
-        <!---->
+        <!--datetime-local valida a entrada de uma data e hora(aaaa-mm-ddThh:mm:ss)-->
         <input type="datetime-local" name="datahora" id="datetime">
         <br>
         <label for="mes">Mês: </label>
-        <!---->
+        <!--month valida a entrada de um mes(aaaa-mm)-->
         <input type="month" name="mes" id="mes">
         <br>
         <label for="sem">Semana: </label>
-        <!---->
+        <!--week valida a entrada de uma semana(aaaa-Wss)-->
         <input type="week" name="sem" id="sem">
         <br>
         <label for="int">Intervalo: </label>
-        <!---->
+        <!--range permite escolher um valor numa barra deslizante e especificar seu itervalo com min e max-->
         <input type="range" name="ran" id="int">
         <br>
         <label for="mail">E-mail: </label>
-        <!---->
+        <!--email valida a entrada de um email, pode ter multiple="multiple"-->
         <input type="email" name="mail" id="mail">
         <br>
         <label for="url">URL: </label>
-        <!---->
+        <!--url valida a entrada de uma url-->
         <input type="url" name="url" id="url">
         <br>
         <label for="cor">Cor: </label>
-        <!---->
+        <!--color permite o usuário escolher uma cor em um gradiente, enviando o codigo hexadecimal-->
         <input type="color" name="cor" id="cor">
         <br>
         <label for="pesq">Busca: </label>
-        <!---->
+        <!--search permite a realização de uma busca-->
         <input type="search" name="search" id="pesq">
         <br>
-        <!---->
+        <!--cria um botão que envia os dados do formulario, o que for colocado em value="" aparecerá na pagina-->
         <input type="submit" name="enviar" value="OK" id="enviar"/>
-        <!---->
+        <!--cria um botão que reseta o formulario ao seu estado inicial, o que for colocado em value="" aparecerá na pagina-->
         <input type="reset" name="resetar" value="Reset" id="resetar">
-        </form>
+    </form>
 </body>
 </html>

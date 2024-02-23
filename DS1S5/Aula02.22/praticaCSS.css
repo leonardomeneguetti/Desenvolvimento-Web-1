@@ -1,3 +1,5 @@
+/*Usando "tagHtml", você edita a aparencia da tag e "tagHtml outraTagHtml" edita a tag mais expecíficaa, sendo que esas modificação substitui ou aumenta a mais geral 
+Usando ".nomeDaClass", você edita a aparencia da tag marcada com a mesma class*/
 .lvl1 {
     list-style-type: decimal;
     color: blue;
