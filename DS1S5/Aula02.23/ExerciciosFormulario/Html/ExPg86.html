@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio pg. 86t</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/ExPg86.css">
+</head>
+<body>
+    <section>
+        <h1>Cadastro de veículo</h1>
+        <form action="xyz.php" method="post" enctype="multipart/form-data">
+            <label for="marca">Marca: </label>
+            <input type="text" required name="marca" id="marca" maxlength="10">
+            <fieldset>
+                <legend>Combustível:</legend>
+                <div>
+                    <input type="checkbox" name="comb" value="alcool" id="comb_1"/>
+                    <label for="comb_1">Álcool</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="comb" value="gasolina" id="comb_2"/>
+                    <label for="comb_2">Gasolina</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Motor:</legend>
+                <div>
+                    <input type="radio" name="motor" value="1.0" id="mot_1"/>
+                    <label for="mot_1">1.0</label>
+                </div>
+                <div>
+                    <input type="radio" name="motor" value="1.6" id="mot_2"/>
+                    <label for="mot_2">1.6</label>
+                </div>
+                <div>
+                    <input type="radio" name="motor" value="2.0" id="mot_3"/>
+                    <label for="mot_3">2.0</label>
+                </div>
+            </fieldset>
+            <label for="cambio">
+                Cambio: 
+            </label>
+            <select name="cambio" id="cambio">
+                <option value="man">Manual</option>
+                <option value="aut">Automático</option>
+            </select>
+            <label for="desc">Descrição: </label>
+            <textarea name="desc" id="desc"></textarea>
+            <label for="data">Data de fabricação: </label>
+            <input type="date" name="data" min="1990-01-01" id="data">
+            <label for="dthr">Data e hora da aquisição: </label>
+            <input type="datetime-local" name="dthr" min="2000-01-01" max="2018-01-01" id="dthr">
+            <label for="sem">Semana da aquisição: </label>
+            <input type="week" name="sem" min="2000" id="sem">
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" min="0" step="0.01" id="preco">
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" multiple id="email">
+            <br>
+            <input type="submit" name="enviar" value="OK">
+        </form>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio pg. 70</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/ExPg70.css">
+</head>
+<body>
+    <section>
+        <h1>Formulário</h1>
+        <form action="xyz.php" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome">
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" id="senha">
+            <label for="imagem">Foto: </label>
+            <input type="file" name="imagem" accept="image/*" id="imagem">
+            <label for="video">Video: </label>
+            <input type="file" name="video" accept="video/*" id="video">
+            <fieldset>
+                <legend>Interesses:</legend>
+                <div>
+                    <input type="checkbox" name="Interesses" value="esp" id="int_1"/>
+                    <label for="int_1">Esporte</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Interesses" value="pol" id="int_2"/>
+                    <label for="int_2">Política</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Interesses" value="eco" id="int_3"/>
+                    <label for="int_3">Economia</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Deseja receber notícias pelo e-mail?</legend>
+                <div>
+                    <input type="radio" name="noticia" value="s" id="not_1" checked="checked"/>
+                    <label for="not_1">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" name="noticia" value="n" id="not_2"/>
+                    <label for="not_1">Não</label>
+                </div>
+            </fieldset>
+            <input type="submit" name="enviar" value="OK">
+            <input type="reset" name="resetar" value="Resetar"a>
+        </form>
+    </section>
+</body>
+</html>
