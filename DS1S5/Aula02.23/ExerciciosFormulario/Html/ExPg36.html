@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício pg.36</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/ExPg36.css">
+</head>
+<body>
+    <section>
+        <h1>Cadastro</h1>
+        <form action="xyz.php" method="post" enctype="multipart/form-data">
+            <label>Nome: 
+                <input type="text" name="nome" required maxlength="30">
+            </label>
+            <label>Endereço: 
+                <input type="text" name="endereco" required maxlength="50">
+            </label>
+            <label>Telefone: 
+                <input type="text" name="telefone" required maxlength="20" placeholder="(00) 0000-00-00">
+            </label>
+            <label>Senha: 
+                <input type="password" name="senha" required maxlength="12">
+            </label>
+            <br>
+            <input type="submit" name="enviar" value="OK"/>
+            <input type="reset" name="resetar" value="Reset">
+        </form>
+    </section>
+</body>
+</html>

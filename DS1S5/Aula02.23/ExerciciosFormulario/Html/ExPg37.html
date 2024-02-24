@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercicio pg. 37</title>
+        <link rel="stylesheet" type="text/css" href="../CSS/ExPg37.css">
+    </head>
+    <body>
+        <form action="xyz.php" method="post" enctype="multipart/form-data">
+            <h1>Tabela</h1>
+            <section>
+                <label>Nome: 
+                    <input type="text" name="nome">
+                </label>
+                <label>Endereço: 
+                    <input type="text" name="endereço">
+                </label>
+                <label>Senha: 
+                    <input type="password" name="senha">
+                </label>
+                <input type="submit" name="enviar" value="Enviar">
+            </section>
+        </form>
+        <br>
+        <h1>Codigo em HTML</h1>
+        <ul>
+            <li>&lt;body&gt;
+                <ul>
+                    <li>&lt;form action="xyz.php" method="post" enctype="multipart/form-data"&gt;
+                        <ul>
+                            <li>&lt;h1&gt;Tabela&lt;/h1&gt;</li>
+                            <li>&lt;section&gt;
+                                <ul>
+                                    <li>&lt;label&gt;Nome: 
+                                        <ul>
+                                            <li>&lt;input type="text" name="nome"&gt;</li>
+                                        </ul>
+                                    </li>
+                                    <li>&lt;/label&gt;</li>
+                                    <li>&lt;label&gt;Endereço: 
+                                        <ul>
+                                            <li>&lt;input type="text" name="endereço"&gt;</li>
+                                        </ul>
+                                    </li>
+                                    <li>&lt;/label&gt;</li>
+                                    <li>&lt;label&gt;Senha: 
+                                        <ul>
+                                            <li>&lt;input type="password" name="senha"&gt;</li>
+                                        </ul>
+                                    </li>
+                                    <li>&lt;/label&gt;</li>
+                                </ul>
+                            </li>
+                            <li>&lt;/section&gt;</li>
+                        </ul>
+                    </li>
+                    <li>&lt;/form&gt;</li>
+                </ul>
+            </li>
+            <li>&lt;/body&gt;</li>
+        </ul>
+        <br>
+        <h1>Código em CSS</h1>
+        <ul>
+            <li>section {
+                <ul>
+                    <li>border: 2px solid black;</li>
+                    <li>width: 15%;</li>
+                    <li>margin: 10px;</li>
+                    <li>padding: 5px 20px 15px 20px;</li>
+                    <li>text-align: right;</li>
+                    <li>font-weight: bold;</li>
+                </ul>
+            </li>
+            <li>}</li>
+            <br>
+            <li>h1 {
+                <ul>
+                    <li>margin: 10px;</li>
+                    <li>font-weight: bold;</li>
+                </ul>
+            </li>
+            <li>}</li>
+            <br>
+            <li>input {
+                <ul>
+                    <li>margin-top: 10px;</li>
+                    <li>padding: 5px;</li>
+                </ul>
+            </li>
+            <li>}</li>
+            <br>
+            <li>input[type=text], input[type=password] {
+                <ul>
+                    <li>width: 65%;</li>
+                    <li>color: rgb(214, 140, 1);</li>
+                </ul>
+            </li>
+            <li>}</li>
+            <br>
+            <li>input[type=submit] {
+                <ul>
+                    <li>border-radius: 10px;</li>
+                    <li>margin-right: 54%;</li>
+                    <li>width: 35%;</li>
+                </ul>
+            </li>
+            <li>}</li>
+            <br>
+            <li>* {
+                <ul>
+                    <li>font-family: Arial, Helvetica, sans-serif;</li>
+                </ul>
+            </li>
+            <li>}</li>
+        </ul>
+    </body>
+</html>
