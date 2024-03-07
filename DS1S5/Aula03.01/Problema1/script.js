@@ -6,8 +6,16 @@ function calcularMedia(){
     resultado = document.getElementById('resultado');
 
     if(!isNaN(idade1) && !isNaN(idade2)){
-
+        idade1 = parseInt(idade1);
+        idade2 = parseInt(idade2);
+        if(idade1 > 0 && idade2 > 0){
+            media = (idade1 + idade2)/2;
+            saida = "Média das idades = " + media;
+        } else {
+            saida = "Algum valor não é positivo"
+        }
     } else {
         saida = 'Algum valor não é um numero.'
     }
+    resultado.value = saida;
 }
