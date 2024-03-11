@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 - Expressões regulares</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Formulário</h1>
+        <form action="" method="get">
+            <label for="name">Nome: </label>
+            <input type="text" name="name" required title="Digite um nome válido." pattern="[A-Z][a-zA-Z]+(\s[a-zA-Z]{2,})+" id="name">
+            <label for="image">Imagem: </label>
+            <input type="file" name="image" required accept="image/*" title="Envie um arquivo de imagem" id="image">
+            <label for="rg">RG: </label>
+            <input type="text" name="rg" title="Digite um RG válido" pattern="\d{2}(\.\d{3}){2}-\d" id="rg">
+            <label for="placa">Placa do veículo: </label>
+            <input type="text" name="placa" title="Digite uma placa válida" pattern="[A-Z]{3}-\d{4}" id="placa">
+            <br>
+            <input type="submit" name="enviar" value="OK" id="enviar"/>
+        </form>
+    </section>
+</body>
+</html>
