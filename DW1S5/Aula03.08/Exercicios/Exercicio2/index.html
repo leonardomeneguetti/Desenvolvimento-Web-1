@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 - Validação de formulario</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Formulario</h1>
+        <form action="" method="get" id="form">
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" required pattern="[a-z][a-z0-9]*\.?[a-z0-9]+@([a-z]+\.)+[a-z]+" id="email">
+            <label for="password">Senha: </label>
+            <input type="password" name="password" required id="password">
+            <label for="passwordconf">Corfime a senha: </label>
+            <input type="password" name="passwordconf" required id="passwordconf">
+            <span id="erro"></span>
+            <br>
+            <input type="submit" name="send" value="OK" id="send">
+        </form>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
