@@ -11,7 +11,7 @@ function validarSenha() {
     let senha = document.getElementById("password");
     let senhaConf = document.getElementById("passwordconf");
 
-    if(!senha.value == senhaConf.value){
+    if(!(senha.value == senhaConf.value)){
         alert("As senhas devem ser iguais.")
         senhaConf.setCustomValidity("Vai se fuder.")
         return false;
