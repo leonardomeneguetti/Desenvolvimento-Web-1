@@ -1,4 +1,4 @@
-package br.edu.ifsp.arq.dw1s5.projeto2;
+package br.edu.ifsp.arq.dw1s5.exercicio1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,13 +36,13 @@ public class RegisterServlet extends HttpServlet {
 		writer.println("<html lang=\"pt-BR\">");
 		writer.println("<head>");
 		writer.println("\t<meta charset=\"UTF-8\">");
-		writer.println("\t<title>Página de Resposta - News List</title>");
+		writer.println("\t<title>Página de Resposta - Exercício 1</title>");
 		writer.println("</head>");
 		writer.println("<body>");
 		writer.println("\t<h1>Cadastro realizado com sucesso!</h1>");
 		writer.println("\t<h2>Nome completo: " + fullName + "</h2>");
 		writer.println("\t<h2>E-mail: " + email + "</h2>");
-		writer.println("\t<h2>Interesses: " + selectedOptions + "</h2>");
+		writer.println("\t<h2>Cursos de extensão: " + selectedOptions + "</h2>");
 		writer.println("</body>");
 		writer.println("</html>");
 		writer.close();
@@ -52,4 +52,6 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
+	
+	
 }
