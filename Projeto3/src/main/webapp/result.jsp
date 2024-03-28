@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.List,br.edu.ifsp.arq.ads.dw1s5.projeto3.model.Person"%>
+    pageEncoding="UTF-8" import="java.util.List,br.edu.ifsp.arq.ads.dw1s5.projeto4.model.Person"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
