@@ -18,7 +18,7 @@
   <body>
   	<div class="container">
   		<div class="col-lg-4 offset-lg-4 col-sm-12">
-  			<form action="login" method="post">
+  			<form action="login.jsp" method="post" id="form1">
   				<h1 class="text-center">Cadastre-se</h1>
   				<div class="mb-2">
   					<label for="name">Nome completo*</label>
@@ -26,21 +26,42 @@
 					<span id="0"></span>
 				</div>
 				<div class="mb-2">
-  					<label for="email">E-mail</label>
+  					<label for="email">E-mail*</label>
 					<input type="email" class="form-control" name="email" id="email" required="required">
 					<span id="1"></span>
 				</div>
 				<div class="mb-2">
-  					<label for="password">Senha</label>
-					<input type="password" class="form-control" name="password" id="password" minlength="6" maxlength="" required="required">
+  					<label for="password">Senha*</label>
+					<input type="password" class="form-control" name="password" id="password" minlength="6" maxlength="12" required="required">
 					<span id="2"></span>
 				</div>
+				<div class="mb-2">
+  					<label for="confirmPassword">Confirmar Senha*</label>
+					<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" minlength="6" maxlength="12" required="required">
+					<span id="3"></span>
+				</div>
+				<div class="mb-2">
+  					<label for="dateOfBirth">Data de Nascimento*</label>
+					<input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required="required">
+					<span id="4"></span>
+				</div>
+				<div class="mb-2">
+  					<label for="gender">Gênero*</label>
+  					<select name="gender" class="form-control" required="required">
+						<option value="" selected="selected">Selecione</option>
+						<option value="MASCULINO">Masculino</option>
+						<option value="FEMININO" >Feminino</option>
+						<option value="OUTRO">Outro</option>
+						<option value="PREFIRO_NAO_DIZER">Prefiro não dizer</option>
+					</select>
+					<span id="5"></span>
+				</div>
+				
 				<button type="submit" class="btn btn-primary mb-3">Entrar</button>
-				<a class="btn btn-secondary" href="user-register.jsp">Cadastrar</a>
   			</form>
   		</div>
   	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+	<script src="js/user-register.js"></script>
   </body>
 </html>
