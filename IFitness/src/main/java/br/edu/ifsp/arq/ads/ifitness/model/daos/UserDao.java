@@ -24,7 +24,8 @@ public class UserDao {
 		String passwordEncrypted = PasswordEncode.encode(password);
 		String sql = "SELECT name, email, password FROM user WHERE email=? AND password=?";
 		Optional<User> optional = Optional.empty();
-		try (Connection conn = dataSource.getConnection();PreparedStatement ps = conn.prepareStatement(sql)){
+		try (Connection conn = dataSource.getConnection();
+		     		PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, email);
 			ps.setString(2, passwordEncrypted);
 			try(ResultSet rs = ps.executeQuery()) {
