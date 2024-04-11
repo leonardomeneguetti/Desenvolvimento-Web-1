@@ -18,7 +18,7 @@
   <body>
   	<div class="container">
   		<div class="col-lg-4 offset-lg-4 col-sm-12">
-  			<form action="login.jsp" method="post" id="form1">
+  			<form action="userRegister" method="post" id="form1">
   				<h1 class="text-center">Cadastre-se</h1>
   				<div class="mb-2">
   					<label for="name">Nome completo*</label>

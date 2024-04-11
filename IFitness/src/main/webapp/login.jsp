@@ -18,7 +18,7 @@
   <body>
   	<div class="container">
   		<div class="col-lg-4 offset-lg-4 col-sm-12">
-  			<form action="login" method="post">
+  			<form action="userRegister" method="post" id="form1">
   				<h1 class="text-center">Login</h1>
   				<div class="input-group mb-3">
 					<span class="input-group-text"><img alt="Ícone de e-mail" src="img/envelope.svg"></span>
