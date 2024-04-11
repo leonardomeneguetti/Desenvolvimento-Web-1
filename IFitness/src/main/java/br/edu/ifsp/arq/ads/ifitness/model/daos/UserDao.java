@@ -46,7 +46,8 @@ public class UserDao {
 	public Optional<User> getUserByEmail(String email) {
 		String sql = "SELECT email FROM user WHERE email=?";
 		Optional<User> optional = Optional.empty();
-		try (Connection conn = dataSource.getConnection();PreparedStatement ps = conn.prepareStatement(sql)){
+		try (Connection conn = dataSource.getConnection();
+		     		PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, email);
 			try(ResultSet rs = ps.executeQuery()) {
 				if(rs.next()) {
@@ -67,7 +68,8 @@ public class UserDao {
 			return false;
 		}
 		String sql = "INSERT INTO user (name, email, password, date_of_birth, gender, active) values (?,?,?,?,?,?)";
-		try (Connection conn = dataSource.getConnection();PreparedStatement ps = conn.prepareStatement(sql)){
+		try (Connection conn = dataSource.getConnection();
+		     		PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getEmail());
 			ps.setString(3, user.getPassword());
