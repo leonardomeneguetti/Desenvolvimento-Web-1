@@ -10,7 +10,7 @@ function initPage() {
 		if(!valid) {
 			e.preventDefault();
 		}
-	})
+	});
 }
 
 function processValidity(form) {
@@ -34,7 +34,7 @@ function applyValidity(form) {
 	let valid = true;
 	let count = 0;
 	let elements = form.elements;
-	for(let i=0;i<elements.length-1;i++) {
+	for(let i=0; i < elements.length - 1; i++) {
 		let element = elements[i];
 		let span = document.getElementById(i);
 		if(!element.validity.valid) {
@@ -44,7 +44,8 @@ function applyValidity(form) {
 			span.innerHTML = ' '; 
 		}
 	}
-	if(count>0) {
+	if(count > 0) {
 		valid = false;
 	}
+	return valid;
 }
