@@ -13,6 +13,7 @@ import br.edu.ifsp.arq.ads.ifitness.model.entities.User;
 import br.edu.ifsp.arq.ads.ifitness.utils.PasswordEncode;
 
 public class UserDao {
+	
 	private DataSource dataSource;
 
 	public UserDao(DataSource dataSource) {
@@ -20,12 +21,14 @@ public class UserDao {
 		this.dataSource = dataSource;
 	}
 	
-	public Optional<User> getUserByEmailAndPassword(String email, String password) {
+	public Optional<User> getUserByEmailAndPassword(String email,
+			String password){
 		String passwordEncrypted = PasswordEncode.encode(password);
-		String sql = "SELECT name, email, password FROM user WHERE email=? AND password=?";
+		String sql = "select name,email,password from user "
+				+ "where email=? and password=?";
 		Optional<User> optional = Optional.empty();
-		try (Connection conn = dataSource.getConnection();
-		     		PreparedStatement ps = conn.prepareStatement(sql)){
+		try(Connection conn = dataSource.getConnection(); 
+				PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, email);
 			ps.setString(2, passwordEncrypted);
 			try(ResultSet rs = ps.executeQuery()) {
@@ -37,39 +40,42 @@ public class UserDao {
 					optional = Optional.of(user);
 				}
 			}
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			throw new RuntimeException("Erro durante a consulta", e);
 		}
 		return optional;
 	}
 	
-	public Optional<User> getUserByEmail(String email) {
-		String sql = "SELECT email FROM user WHERE email=?";
+	public Optional<User> getUserByEmail(String email){
+		String sql = "select id,name,email from user where email=?";
 		Optional<User> optional = Optional.empty();
-		try (Connection conn = dataSource.getConnection();
-		     		PreparedStatement ps = conn.prepareStatement(sql)){
+		try(Connection conn = dataSource.getConnection(); 
+				PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, email);
 			try(ResultSet rs = ps.executeQuery()) {
 				if(rs.next()) {
 					User user = new User();
-					user.setEmail(rs.getString(2));
+					user.setId(rs.getLong(1));
+					user.setName(rs.getString(2));
+					user.setEmail(rs.getString(3));
 					optional = Optional.of(user);
 				}
 			}
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			throw new RuntimeException("Erro durante a consulta", e);
 		}
 		return optional;
 	}
 	
-	public Boolean save(User user) {
+	public Boolean save(User user){
 		Optional<User> optional = getUserByEmail(user.getEmail());
 		if(optional.isPresent()) {
 			return false;
 		}
-		String sql = "INSERT INTO user (name, email, password, date_of_birth, gender, active) values (?,?,?,?,?,?)";
-		try (Connection conn = dataSource.getConnection();
-		     		PreparedStatement ps = conn.prepareStatement(sql)){
+		String sql = "insert into user (name, email, password, "
+				+ "date_of_birth, gender, active) values (?,?,?,?,?,?)";
+		try(Connection conn = dataSource.getConnection(); 
+				PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getEmail());
 			ps.setString(3, user.getPassword());
@@ -77,9 +83,10 @@ public class UserDao {
 			ps.setString(5, user.getGender().toString());
 			ps.setBoolean(6, true);
 			ps.executeUpdate();
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			throw new RuntimeException("Erro durante a consulta", e);
 		}
 		return true;
 	}
+
 }
