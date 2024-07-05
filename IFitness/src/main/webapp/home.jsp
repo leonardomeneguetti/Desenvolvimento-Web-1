@@ -19,8 +19,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="container-fluid">
 	    <a class="navbar-brand" href="homeServlet">IFitness</a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,19 +32,15 @@
 	        </li>
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            ${name}
+	            ${sessionScope.user.name}
 	          </a>
 	          <ul class="dropdown-menu">
 	            <li><a class="dropdown-item" href="#">Minha Conta</a></li>
 	            <li><hr class="dropdown-divider"></li>
-	            <li><a class="dropdown-item" href="#">Sair</a></li>
+	            <li><a class="dropdown-item" href="logout">Sair</a></li>
 	          </ul>
 	        </li>
 	      </ul>
-	      <form class="d-flex">
-	        <input class="form-control me-2" type="search" placeholder="Pesquisar">
-	        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-	      </form>
 	    </div>
 	  </div>
 	</nav>
@@ -54,6 +49,40 @@
 			<div class="col-12">
 				<h1 class="text-center">Listagem de Atividades</h1>
 			</div>
+			<form action="activitySearch" method="post">
+				<div class="row">
+					<div class="col-12 col-lg-3">
+					  	<div class="mb-2">
+							<label for="type">Tipo</label> 
+							<select class="form-select"
+								name="type" id="type">
+								<option value="" selected>Selecione</option>
+								<option value="CAMINHADA">Caminhada</option>
+								<option value="CICLISMO">Ciclismo</option>
+								<option value="CORRIDA">Corrida</option>
+								<option value="NATACAO">Natação</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="mb-2">
+							<label for="initial-date">Data inicial</label> 
+							<input type="date" name="initial-date" id="initial-date"
+								class="form-control">
+						</div>
+					</div>  
+					<div class="col-12 col-lg-3">
+						<div class="mb-2">
+							<label for="final-date">Data final</label>
+							<input type="date" name="final-date" id="final-date"
+								class="form-control">
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 mt-4">
+						<button type="submit" class="btn btn-primary">Filtrar</button>
+					</div>  
+				</div>
+			</form>
 			<c:choose>
 				<c:when test="${fn:length(userActivities) > 0}">
 					<table class="table table-responsive table-striped table-hover" >
@@ -71,16 +100,16 @@
 								<td>
 									<c:choose>
 										<c:when test="${activity.type == 'CORRIDA'}">
-											<img src="img/running_icon.png" alt="Corrida">
+											<img src="icons/running_icon.png" alt="Corrida">
 										</c:when>
 										<c:when test="${activity.type == 'CAMINHADA'}">
-											<img src="img/walking_icon.png" alt="Corrida">
+											<img src="icons/walking_icon.png" alt="Corrida">
 										</c:when>
 										<c:when test="${activity.type == 'CICLISMO'}">
-											<img src="img/cycling_icon.png" alt="Corrida">
+											<img src="icons/cycling_icon.png" alt="Corrida">
 										</c:when>
 										<c:when test="${activity.type == 'NATACAO'}">
-											<img src="img/swimming_icon.png" alt="Corrida">
+											<img src="icons/swimming_icon.png" alt="Corrida">
 										</c:when>
 									</c:choose>
 								</td>
@@ -94,11 +123,11 @@
 								<td>
 									<a class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"
                 						href="activityRegister?action=update&activity-id=${activity.id}">
-                						<img src="img/pencil-square.svg" alt="Editar">
+                						<img src="icons/pencil-square.svg" alt="Editar">
                 					</a>
                 					<a class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir"
                 						href="activityRegister?action=delete&activity-id=${activity.id}">
-                						<img src="img/trash-fill.svg" alt="Excluir">
+                						<img src="icons/trash.svg" alt="Excluir">
                 					</a>
 								</td>
 							</tr>
