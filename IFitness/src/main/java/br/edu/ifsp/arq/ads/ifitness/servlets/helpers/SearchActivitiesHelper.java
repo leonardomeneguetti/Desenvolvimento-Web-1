@@ -1,6 +1,5 @@
-package br.edu.ifsp.arq.ads.ifitness.servlets;
+package br.edu.ifsp.arq.ads.ifitness.servlets.helpers;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -11,25 +10,14 @@ import br.edu.ifsp.arq.ads.ifitness.model.entities.Activity;
 import br.edu.ifsp.arq.ads.ifitness.model.entities.ActivityType;
 import br.edu.ifsp.arq.ads.ifitness.model.entities.User;
 import br.edu.ifsp.arq.ads.ifitness.utils.SearcherDataSource;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/activitySearch")
-public class ActivitySearchServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-
-	public ActivitySearchServlet() {
-		super();
-	}
+public class SearchActivitiesHelper implements Helper {
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		String type = req.getParameter("type");
 		ActivityType activityType = null;
 		if(!type.isEmpty()) {
@@ -62,8 +50,7 @@ public class ActivitySearchServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		req.setAttribute("userActivities", userActivities);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-		dispatcher.forward(req, resp);
+		return "/home.jsp";
 	}
-	
+
 }

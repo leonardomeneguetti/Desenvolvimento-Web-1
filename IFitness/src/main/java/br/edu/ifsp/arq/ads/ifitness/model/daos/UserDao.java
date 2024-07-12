@@ -24,7 +24,7 @@ public class UserDao {
 	public Optional<User> getUserByEmailAndPassword(String email,
 			String password){
 		String passwordEncrypted = PasswordEncode.encode(password);
-		String sql = "select name,email,password from user "
+		String sql = "select id, name,email from user "
 				+ "where email=? and password=?";
 		Optional<User> optional = Optional.empty();
 		try(Connection conn = dataSource.getConnection(); 
@@ -34,9 +34,9 @@ public class UserDao {
 			try(ResultSet rs = ps.executeQuery()) {
 				if(rs.next()) {
 					User user = new User();
-					user.setName(rs.getString(1));
-					user.setEmail(rs.getString(2));
-					user.setPassword(rs.getString(3));
+					user.setId(rs.getLong(1));
+					user.setName(rs.getString(2));
+					user.setEmail(rs.getString(3));
 					optional = Optional.of(user);
 				}
 			}

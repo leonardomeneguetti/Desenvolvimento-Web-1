@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" 
     import = "java.util.List,br.edu.ifsp.arq.ads.ifitness.model.entities.Activity"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!-- jakarta.tags.core -->
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %><!-- jakarta.tags.functions -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" href="homeServlet">IFitness</a>
+	    <a class="navbar-brand" href="ControllerServlet?action=listActivities">IFitness</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
@@ -37,7 +37,8 @@
 	          <ul class="dropdown-menu">
 	            <li><a class="dropdown-item" href="#">Minha Conta</a></li>
 	            <li><hr class="dropdown-divider"></li>
-	            <li><a class="dropdown-item" href="logout">Sair</a></li>
+	            <li><a class="dropdown-item" href="ControllerServlet?action=logout">Sair</a>
+	            </li>
 	          </ul>
 	        </li>
 	      </ul>
@@ -49,7 +50,7 @@
 			<div class="col-12">
 				<h1 class="text-center">Listagem de Atividades</h1>
 			</div>
-			<form action="activitySearch" method="post">
+			<form action="ControllerServlet" method="post">
 				<div class="row">
 					<div class="col-12 col-lg-3">
 					  	<div class="mb-2">
@@ -79,7 +80,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-3 mt-4">
-						<button type="submit" class="btn btn-primary">Filtrar</button>
+						<button type="submit" class="btn btn-primary" name="action" value="searchActivities">Filtrar</button>
 					</div>  
 				</div>
 			</form>
@@ -100,16 +101,16 @@
 								<td>
 									<c:choose>
 										<c:when test="${activity.type == 'CORRIDA'}">
-											<img src="icons/running_icon.png" alt="Corrida">
+											<img src="img/running_icon.png" alt="Corrida">
 										</c:when>
 										<c:when test="${activity.type == 'CAMINHADA'}">
-											<img src="icons/walking_icon.png" alt="Corrida">
+											<img src="img/walking_icon.png" alt="Caminhada">
 										</c:when>
 										<c:when test="${activity.type == 'CICLISMO'}">
-											<img src="icons/cycling_icon.png" alt="Corrida">
+											<img src="img/cycling_icon.png" alt="Ciclismo">
 										</c:when>
 										<c:when test="${activity.type == 'NATACAO'}">
-											<img src="icons/swimming_icon.png" alt="Corrida">
+											<img src="img/swimming_icon.png" alt="Natação">
 										</c:when>
 									</c:choose>
 								</td>
@@ -121,14 +122,18 @@
 								<td>${activity.distance}</td>
 								<td>${activity.duration}</td>
 								<td>
-									<a class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar"
-                						href="activityRegister?action=update&activity-id=${activity.id}">
-                						<img src="icons/pencil-square.svg" alt="Editar">
-                					</a>
-                					<a class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir"
-                						href="activityRegister?action=delete&activity-id=${activity.id}">
-                						<img src="icons/trash.svg" alt="Excluir">
-                					</a>
+									<span data-bs-toggle="tooltip" data-bs-placement="top" title="Editar">
+										<a class="btn" href="ControllerServlet?action=updateActivity&activity-id=${activity.id}">
+	                						<img src="img/pencil-square.svg" alt="Editar">
+	                					</a>
+									</span>
+									
+                					<span data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
+                						<a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal" data-bs-id="${activity.id}">
+	                						<img src="img/trash.svg" alt="Excluir">
+	                					</a>
+                					</span>
+                					
 								</td>
 							</tr>
 						</c:forEach>
@@ -139,6 +144,25 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal" tabindex="-1" id="myModal">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Exclusão</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        <p>Tem certeza que deseja excluir a atividade?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+		        <a id="link" href="" class="btn btn-danger">Excluir</a>
+		      </div>
+		    </div>
+	  	</div>
 	</div>
 	
 	<script
