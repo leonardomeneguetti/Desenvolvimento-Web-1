@@ -1,1 +1,1 @@
-Meus projetos aolongo da disciplina de Desenvolvimento Web 1
+Meus projetos ao longo da disciplina de Desenvolvimento Web 1
